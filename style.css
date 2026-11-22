@@ -1,0 +1,115 @@
+/* ОБЩИЕ КЛАССЫ */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: radial-gradient(circle, rgb(252, 174, 197) 7%, rgb(244, 226, 216) 100%);
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ОТКРЫТКА */
+.card {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    background-color: rgb(252, 239, 249);
+    border-radius: 30px;
+    text-align: center;
+    padding: 40px 30px;
+    box-shadow: 0px 10px 30px rgb(86, 57, 86);
+    /* border: 1px solid pink; */
+    overflow: hidden;
+    width: 100%;
+}
+.flowers {
+    font-size: 55px;
+    margin-bottom: 20px;
+    animation: FlowerMove 3s infinite;
+}
+h1{
+    color: rgb(154, 18, 77);
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+h1+p{
+   color: rgb(82, 15, 44);
+   font-size: 19px;
+   margin-bottom: 25px;
+}
+.divider {
+    width: 100px;
+    height: 3px;
+    background-color: rgb(176, 6, 91);
+    margin: 25px auto;
+}
+/* ПОЗДРАВЛЕНИЕ */
+.message {
+    display: none;
+    background-color: rgb(251, 215, 232);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 20px;
+}
+.message h2{
+    color: rgb(106, 3, 51);
+    margin-bottom: 15px;
+}    
+.message p{
+    color: rgb(73, 2, 36);
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+/* КНОПКА */
+button{
+    background-color: rgb(125, 66, 98);
+    color: aliceblue;
+    border: none;
+    padding: 16px 30px;
+    font-size: 17px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover{
+    background-color: rrgb(94, 50, 74);
+    transform: scale(1.05);
+}
+/* АНИМАЦИЯ СЕРДЕЧЕК */
+.hearts{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+.hearts span{
+    position: absolute;
+    font-size: 25px;
+    top: -30px;
+    animation: fall 6s linear infinite;
+}
+/* ВСЕ АНИМАЦИИ */
+@keyframes fall{
+    from{
+        top: -30px;
+    }
+    to{
+        top: 100%;
+    }
+}
+@keyframes FlowerMove{
+    0%, 100%{
+        transform: rotate(-5deg);
+    }
+    50%{
+        transform: rotate(5deg);
+    }
+}
